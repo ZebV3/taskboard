@@ -33,7 +33,7 @@ export default function RegisterPage() {
     setServerError("");
     try {
       await api("/api/register", { method: "POST", body: JSON.stringify(data) });
-      router.push("/dashboard");
+      router.push("/boards");
     } catch (e) {
       console.error(e);
       if (e instanceof ApiError) {

@@ -19,7 +19,7 @@ export default function LoginPage() {
   const onSubmit = async (data: Form) => {
     try {
       await api("/api/login", { method: "POST", body: JSON.stringify(data) });
-      router.push("/dashboard");
+      router.push("/boards");
     } catch (e) {
       if (e instanceof ApiError && e.errors?.email) {
         setError("email", { message: e.errors.email[0] });

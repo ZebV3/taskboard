@@ -27,6 +27,9 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     },
   });
   if (!res.ok) {
+    if (res.status === 401 && typeof window !== "undefined" && window.location.pathname !== "/login") {
+      window.location.assign("/login");
+    }
     const body = await res.json().catch(() => ({}));
     throw new ApiError(res.status, body.message ?? res.statusText, body.errors);
   }

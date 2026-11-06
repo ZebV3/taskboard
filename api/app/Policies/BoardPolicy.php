@@ -11,7 +11,7 @@ class BoardPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Board $board): bool
+    public function view(User $user, Board $board)
     {
         return $user->id === $board->user_id;
     }
@@ -19,7 +19,7 @@ class BoardPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Board $board): bool
+    public function update(User $user, Board $board)
     {
         return $user->id === $board->user_id;
     }
@@ -27,7 +27,7 @@ class BoardPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Board $board): bool
+    public function delete(User $user, Board $board)
     {
         return $user->id === $board->user_id;
     }

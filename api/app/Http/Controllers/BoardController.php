@@ -26,7 +26,7 @@ class BoardController extends Controller
     public function show(Board $board)
     {
         Gate::authorize('view', $board);
-        return new BoardResource($board);
+        return new BoardResource($board->load('lists.cards'));
     }
 
     public function update(BoardRequest $request, Board $board)

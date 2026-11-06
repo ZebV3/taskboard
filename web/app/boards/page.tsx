@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useBoards, useCreateBoard, useUpdateBoard, useDeleteBoard } from "@/lib/boards";
+import Link from "next/link";
 
 export default function BoardsPage() {
   const { data: boards, isLoading, error } = useBoards();
@@ -39,7 +40,7 @@ export default function BoardsPage() {
         {boards?.map((b) => (
           <li key={b.id} style={{ backgroundColor: b.color }}
             className="flex h-28 flex-col justify-between rounded p-3 text-white">
-            <span className="font-medium">{b.title}</span>
+            <Link href={`/boards/${b.id}`} className="font-medium hover:underline">{b.title}</Link>
             <div className="flex gap-3 text-sm">
               <button onClick={() => {
                 const t = prompt("Rename board", b.title);
@@ -52,6 +53,7 @@ export default function BoardsPage() {
           </li>
         ))}
       </ul>
+      
     </main>
   );
 }

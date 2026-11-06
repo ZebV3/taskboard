@@ -27,7 +27,7 @@ export default function ListColumn({list, m}: Props) {
             </header>
 
             <ul className="mb-3 flex flex-col gap-2 overflow-y-auto">
-                {list.cards.map((c) => (
+                {(list.cards ?? []).map((c) => (
                     <li key={c.id} className="rounded bg-white p-2 text-sm shadow-sm">
                         <p>{c.title}</p>
                         {c.due_date ?? <p className="mt-1 text-xs text-gray-500">Due {c.due_date}</p>}

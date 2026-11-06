@@ -10,6 +10,8 @@ class BoardList extends Model
     /** @use HasFactory<\Database\Factories\BoardListFactory> */
     use HasFactory;
 
+    protected $fillable = ['title'];
+
     public function board()
     {
         return $this->belongsTo(Board::class);

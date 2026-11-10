@@ -18,7 +18,7 @@ class BoardListResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'position' => $this->position,
-            'cards' => CardResource::collection($this->whenLoaded('cards'))
+            'cards' => CardResource::collection($this->whenLoaded('cards')),
         ];
     }
 }

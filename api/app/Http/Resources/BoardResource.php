@@ -18,7 +18,7 @@ class BoardResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'color' => $this->color,
-            'lists' => BoardResource::collection($this->whenLoaded('lists')),
+            'lists' => BoardListResource::collection($this->whenLoaded('lists')),
             'created_at' => $this->created_at
         ];
     }

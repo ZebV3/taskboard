@@ -15,15 +15,12 @@ class BoardListRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'max:100']
+            'title' => [$this->isMethod('post') ? 'required' : 'sometimes', 'string', 'max:255'],
+            'description' => ['nullable', 'string', 'max:5000'],
+            'due_date' => ['nullable', 'date'],
         ];
     }
 }

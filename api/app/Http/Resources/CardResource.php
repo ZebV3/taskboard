@@ -19,7 +19,7 @@ class CardResource extends JsonResource
             'title' => $this->title,
             'description' => $this->description,
             'position' => $this->position,
-            'due_date' => $this->due_date?->toDateString()
+            'due_date' => $this->due_date?->toDateString(),
         ];
     }
 }

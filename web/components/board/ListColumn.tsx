@@ -12,7 +12,7 @@ export default function ListColumn({list, m}: Props) {
     return (
         <section className="flex max-h-full w-72 shrink-0 flex-col rounded-lg bg-gray-100 p-3">
             <header className="mb-3 flex items-center justify-between">
-                <h2 className="font-semibold">{list.title}</h2>
+                <h2 className="font-semibold text-black">{list.title}</h2>
                 <div className="flex gap-2 text-xs text-gray-600">
                     <button onClick={() => {
                         const t = prompt("Rename list", list.title);

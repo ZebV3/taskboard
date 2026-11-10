@@ -10,13 +10,12 @@ class BoardList extends Model
     /** @use HasFactory<\Database\Factories\BoardListFactory> */
     use HasFactory;
 
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'position'];
 
     public function board()
     {
         return $this->belongsTo(Board::class);
     }
-
     public function cards()
     {
         return $this->hasMany(Card::class)->orderBy('position');

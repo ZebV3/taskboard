@@ -7,14 +7,8 @@ use App\Models\User;
 
 class BoardListPolicy
 {
-    /**
-     * Determine whether the user can manage the model
-     * @param User $user
-     * @param BoardList $boardList
-     * @return bool
-     */
-    public function manage(User $user, BoardList $boardList)
+    public function manage(User $user, BoardList $list): bool
     {
-        return $boardList->board->user_id === $user->id;
+        return $list->board->user_id === $user->id;
     }
 }

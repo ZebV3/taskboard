@@ -12,12 +12,12 @@ class Card extends Model
 
     protected $fillable = ['title', 'description', 'position', 'due_date'];
 
-    protected function casts()
+    protected function casts(): array
     {
         return ['due_date' => 'date'];
     }
 
-    public function boarList()
+    public function boardList()
     {
         return $this->belongsTo(BoardList::class);
     }
